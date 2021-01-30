@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+  dominoes:
+    build:
+      dockerfile: docker/dominoes/Dockerfile
+      context: .
+    image: dominoes:1.0.0
+    container_name: dominoes
+    ports:
+     - "0.0.0.0:8080:8080"
+     - "0.0.0.0:8443:8443"
+     - "0.0.0.0:9997:9997"
+    environment:
+      JAVA_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,address=9997,suspend=n"

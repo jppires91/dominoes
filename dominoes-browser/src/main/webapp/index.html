@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Dominoes</title>
+</head>
+<body>
+<h1>Dominoes Game</h1>
+
+<table>
+    <tr id="new_game">
+        <td colspan="2">
+            <input type="text" id="username" placeholder="Username"/>
+            <button type="button" onclick="connect();">New Game</button>
+        </td>
+    </tr>
+    <tr id="players">
+
+    </tr>
+</table>
+<textarea readonly="true" rows="30" cols="150" id="log" >Insert your name to start a new game</textarea>
+<table>
+    <tr id="pieces">
+
+    </tr>
+    <tr id="place" style="display:none">
+        <td>
+            Left: <input type="radio" id="place_left" name="place" value="L"/>
+        </td>
+        <td>
+            Right: <input type="radio" id="place_right" name="place" value="R"/>
+        </td>
+    </tr>
+    <tr id="play_moves" style="display:none">
+        <td>
+            <button type="button" onclick="play();">Play</button>
+        </td>
+        <td>
+            <button type="button" onclick="getFromStock();">Get From Stock</button>
+        </td>
+        <td>
+            <b id="stockSize"></b>
+        </td>
+    </tr>
+</table>
+</body>
+
+<script src="websocket.js"></script>
+
+</html>
